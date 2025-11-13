@@ -1,0 +1,120 @@
+\documentclass[12pt,letterpaper]{report}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{caption}
+\usepackage{hyperref}
+
+% Custom style file for thesis formatting requirements
+\input{thesis-style}
+
+\begin{document}
+
+\title{Thesis Title}
+\author{Student Name}
+\date{\today}
+\maketitle
+
+\doublespacing
+
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+
+This is the abstract of the thesis. It provides a brief overview of the research conducted.
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{INTRODUCTION}
+
+This is the introduction chapter. It sets up the context for the research.
+
+\section{Background and Motivation}
+
+This section provides background information.
+
+\subsection{Related work}
+
+This subsection discusses related work in the field.
+
+\subsubsection{Specific topic.}
+This is a run-in heading that continues with the paragraph text immediately following the heading.
+
+\section{Research Questions}
+
+This section outlines the research questions addressed in this thesis.
+
+\chapter{METHODOLOGY}
+
+This chapter describes the methodology used in the research.
+
+\section{Experimental Setup}
+
+The experimental setup is described in this section. In this work, we utilize mathematical formulas to express key relationships. For instance, the quadratic formula is given by:
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\end{equation}
+where $a$, $b$, and $c$ are coefficients of the quadratic equation $ax^2 + bx + c = 0$.
+
+\section{Example with Figure}
+
+This section demonstrates the proper way to introduce and discuss figures. The following paragraph introduces the figure.
+
+Figure \ref{fig:example} presents an example visualization of the data collected during the experimental phase. The figure illustrates the key trends observed in the dataset.
+
+\begin{figure}[htbp]
+\centering
+% \includegraphics[width=0.8\textwidth]{example-figure}
+\fbox{\parbox{0.8\textwidth}{\centering [Example Figure Placeholder]}}
+\caption{Example figure showing experimental results}
+\label{fig:example}
+\end{figure}
+
+The figure reveals several important patterns in the data. First, we observe a linear relationship between the two variables. Second, the variance increases with higher values of the independent variable. These observations support the hypotheses presented in the previous chapter.
+
+\section{Example with Table}
+
+This section demonstrates the proper way to introduce and discuss tables. The following paragraph introduces the table.
+
+Table \ref{tab:example} summarizes the key statistics from the experimental results. The table presents mean values and standard deviations for each experimental condition.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary statistics for experimental conditions}
+\label{tab:example}
+\begin{tabular}{lcc}
+\hline
+Condition & Mean & Std Dev \\
+\hline
+Control & 10.5 & 2.3 \\
+Treatment A & 15.2 & 3.1 \\
+Treatment B & 18.7 & 2.8 \\
+\hline
+\end{tabular}
+\end{table}
+
+The table shows that Treatment B achieved the highest mean value of 18.7, which represents a 78\% increase over the control condition. Treatment A also showed improvement with a mean of 15.2. The standard deviations remain relatively consistent across conditions, indicating stable measurement precision.
+
+\chapter{RESULTS}
+
+This chapter presents the results of the research.
+
+\chapter{DISCUSSION}
+
+This chapter discusses the implications of the results.
+
+\chapter{CONCLUSION}
+
+This chapter concludes the thesis and suggests directions for future work.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
