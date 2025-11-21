@@ -1,0 +1,91 @@
+% thesis-style.tex
+% Custom style file for thesis manuscript formatting requirements
+
+% ============================================================================
+% HEADING FORMATTING
+% ============================================================================
+
+% 1st Level: ALL CAPS, CENTERED (chapters)
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\centering}
+  {\MakeUppercase{\chaptertitlename\ \thechapter}}
+  {20pt}
+  {\MakeUppercase}
+
+% 2nd Level: Title Case (sections)
+\titleformat{\section}
+  {\normalfont\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+% 3rd Level: Sentence case (subsections)
+\titleformat{\subsection}
+  {\normalfont\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+% 4th Level: Sentence case, run-in with paragraph (subsubsections)
+\titleformat{\subsubsection}[runin]
+  {\normalfont\bfseries}
+  {\thesubsubsection}
+  {1em}
+  {}
+  [.]
+
+% ============================================================================
+% PROHIBIT BULLETS AND EM DASHES
+% ============================================================================
+
+% Redefine itemize to produce error
+\renewenvironment{itemize}{%
+  \PackageError{thesis-style}{Bullet points are prohibited in this thesis manuscript}{%
+    Please use numbered lists or paragraph text instead of bullet points.}%
+}{}
+
+% Redefine enumerate to allow numbered lists (not bullets)
+% Keep enumerate functional for academic writing
+
+% Create a simple warning for em dashes instead of preventing them
+% This allows the document to compile but reminds authors about the restriction
+\newcommand{\notemdash}{%
+  \PackageWarning{thesis-style}{Em dashes should be avoided in this thesis manuscript}%
+}
+
+% ============================================================================
+% FIGURE AND TABLE GUIDELINES
+% ============================================================================
+
+% Configure captions to appear below figures and tables
+\captionsetup{position=below}
+
+% Add a command to remind about proper figure/table introduction
+\newcommand{\figurereminder}{%
+  \PackageWarning{thesis-style}{%
+    Remember: Introduce figures in the preceding paragraph, 
+    place caption below the figure, and discuss in the subsequent paragraph}%
+}
+
+\newcommand{\tablereminder}{%
+  \PackageWarning{thesis-style}{%
+    Remember: Introduce tables in the preceding paragraph,
+    place caption below the table, and discuss in the subsequent paragraph}%
+}
+
+% ============================================================================
+% MATHEMATICAL FORMULAS
+% ============================================================================
+
+% Mathematical packages are already loaded in main document
+% Ensure proper rendering with amsmath, amssymb, amsthm
+
+% ============================================================================
+% ACADEMIC STYLE ENFORCEMENT
+% ============================================================================
+
+% Ensure double spacing for academic manuscripts
+\doublespacing
+
+% Set proper academic formatting for bibliography
+\bibliographystyle{plain}
