@@ -1,5 +1,4 @@
 LITERATURE CITED
-
 Agricultural Training Institute, 2022. Good Agricultural Practices (PhilGAP).
 Ajayi, O.O., Toromade, A.S., Olagoke, A., 2024. Data-Driven Agropreneurship (DDA): Empowering Farmers through Predictive Analytics. Magna Sci. Adv. Res. Rev. 12, 001–007. https://doi.org/10.30574/msarr.2024.12.2.0177
 Android Developers, 2025. Common modularization patterns | App architecture [WWW Document]. Android Developers. URL https://developer.android.com/topic/modularization/patterns (accessed 7.27.25).
@@ -7,6 +6,7 @@ Angchay, B.L., Malubay, M.C., Mano-Pelin, J.J., Mapayo, A., 2024. Exploring The 
 Ashari, Ariningsih, E., Saptana, Saliem, H.P., Laksono, P., 2024. An overview of reducing rice yield loss to improve national food security. BIO Web Conf. 119, 01011. https://doi.org/10.1051/bioconf/202411901011
 Balita, C., 2024a. Philippines: production volume of unmilled rice 2023 [WWW Document]. Statista. URL https://www.statista.com/statistics/751778/philippines-paddy-production/ (accessed 9.29.24).
 Balita, C., 2024b. Rice market in the Philippines - statistics & facts [WWW Document]. Statista. URL https://www.statista.com/topics/11682/rice-in-the-philippines/ (accessed 10.25.24).
+Bangor, A., Kortum, P., Miller, J., 2009. Determining what individual SUS scores mean: adding an adjective rating scale. J. Usability Studies 4, 114–123.
 Barangay Balutakay, Hagonoy, Davao del Sur, 2014. Barangay Balutakay Development Plan 2014.
 Bautista, E.U., Javier, E.F., 2005. The Evolution of Rice Production Practices (Working Paper No. 2005–14). PIDS Discussion Paper Series.
 Bergstra, J., Bengio, Y., 2012. Random search for hyper-parameter optimization. J. Mach. Learn. Res. 13, 281–305.
@@ -16,12 +16,14 @@ Biau, G., Scornet, E., 2015. A Random Forest Guided Tour. https://doi.org/10.485
 Bordey, F.H., Launio, C.C., Beltran, J.C., Litonjua, A.C., Manalili, R.G., Mataia, A.B., Moya, P.F., 2015. Rice for Decision-Makers. PhilRice 6.
 Breiman, L., 2001. Random Forests. Machine Learning 45, 5–32. https://doi.org/10.1023/A:1010933404324
 Brooke, J., 1996. (PDF) SUS: A quick and dirty usability scale [WWW Document]. ResearchGate. URL https://www.researchgate.net/publication/228593520_SUS_A_quick_and_dirty_usability_scale (accessed 1.20.25).
+Bureau of Agriculture and Fisheries Standards, 2019. Code of Good Agricultural Practices for Rice.
 Chang, T.T., Bardenas, E.A., 1965. The Morphology and Varietal Characteristics of the Rice Plant. The International Rice Research Institute.
 Creswell, J.W., Creswell, J.D., 2018. Research Design: Qualitative, Quantitative, and Mixed Methods Approaches.
 DA Press Office, 2022. FROM BUSINESS MIRROR: Philippine Rice Production, Varieties and Research: What We Know So Far [WWW Document]. Official Portal of the Department of Agriculture. URL https://www.da.gov.ph/from-business-mirror-philippine-rice-production-varieties-and-research-what-we-know-so-far/ (accessed 9.28.24).
 DA-AFID, 2022. Phl rice production remains high despite big challenges [WWW Document]. Official Portal of the Department of Agriculture. URL https://www.da.gov.ph/phl-rice-production-remains-high-despite-big-challenges/ (accessed 4.1.24).
 Dait, J.M.G., 2023. A Panel Data Study on Factors Affecting Rice Production in the Philippines. ujar 11, 547–557. https://doi.org/10.13189/ujar.2023.110305
 David, M.C.V., 2023. Rice Yield Modeling Using Machine Learning Algorithms Based on Environmental and Agronomic Data of Pampanga River Basin, Philippines. ujar 11, 836–848. https://doi.org/10.13189/ujar.2023.110509
+Davis, F.D., 1989. Perceived Usefulness, Perceived Ease of Use, and User Acceptance of Information Technology. MIS Quarterly 13, 319–340. https://doi.org/10.2307/249008
 Dennis, P., 2023. Rapid Application Development Pros And Cons. URL https://watkyn.com/blog/rad-pros-cons/ (accessed 12.6.24).
 Department of Agriculture-Agricultural Training Institute – Cordillera Administrative Region, 2022. Simple Fertilizer Computations Using Split Method of Applications in Rice Production.
 Eunice Huang, n.d. Anatomy of Rice Plant | BioRender Science Templates [WWW Document]. Anatomy of Rice Plant. URL https://www.biorender.com/template/anatomy-of-rice-plant (accessed 1.13.25).
@@ -30,8 +32,10 @@ Gabrillo, C., Torres, C., 2022. Perceived benefits of ICT-based rice technologie
 GeeksforGeeks, 2024a. Artificial Neural Networks and its Applications - GeeksforGeeks [WWW Document]. Artificial Neural Networks and its Applications. URL https://www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/ (accessed 1.13.25).
 GeeksforGeeks, 2024b. How to Calculate Entropy in Decision Tree? - GeeksforGeeks [WWW Document]. How to Calculate Entropy in Decision Tree? URL https://www.geeksforgeeks.org/how-to-calculate-entropy-in-decision-tree/ (accessed 1.20.25).
 Gill, N.S., 2024. Artificial Neural Network Applications and Algorithms [WWW Document]. Artificial Neural Network Applications and Algorithms. URL https://www.xenonstack.com/blog/artificial-neural-network-applications (accessed 1.13.25).
+Gillis, A.S., 2024. What is a 3-Tier Application Architecture? | Definition from TechTarget [WWW Document]. Search Software Quality. URL https://www.techtarget.com/searchsoftwarequality/definition/3-tier-application (accessed 11.14.25).
 Ginting, N.M., Andari, G., 2021. Factors Affecting Rice Production. J. Phys.: Conf. Ser. 1899, 012068. https://doi.org/10.1088/1742-6596/1899/1/012068
 Google, 2024. Machine Learning Pipelines [WWW Document]. Google Developers. URL https://developers.google.com/machine-learning/managing-ml-projects/pipelines
+Google LLC, 2024. Kotlin and Android. Android Developers.
 Hastie, T., Tibshirani, R., Friedman, J., 2009. The Elements of Statistical Learning, Springer Series in Statistics. Springer, New York, NY. https://doi.org/10.1007/978-0-387-84858-7
 Heinrichs, E.A., n.d. Management of Rice Insect Pests | Radcliffe’s IPM World Textbook [WWW Document]. Management of Rice Insect Pests. URL https://ipmworld.umn.edu/heinrichs (accessed 1.13.25).
 Hondrade, R.F.D., 2007. The LGU Extension Services in a Major Rice-Growing Area: The Case of Hagonoy, Davao del Sur (Working Paper No. 2007– 01). PIDS Discussion Paper Series.
@@ -40,6 +44,7 @@ Jagathesan, Dr.T., 2020. Application of Mathematical Models in Agriculture- A Re
 James, G., Witten, D., Hastie, T., Tibshirani, R., Taylor, J., 2023a. An Introduction to Statistical Learning: with Applications in Python, Springer Texts in Statistics. Springer International Publishing, Cham. https://doi.org/10.1007/978-3-031-38747-0
 James, G., Witten, D., Hastie, T., Tibshirani, R., Taylor, J., 2023b. Tree-Based Methods, in: James, G., Witten, D., Hastie, T., Tibshirani, R., Taylor, J. (Eds.), An Introduction to Statistical Learning: With Applications in Python. Springer International Publishing, Cham, pp. 331–366. https://doi.org/10.1007/978-3-031-38747-0_8
 Jeong, J.H., Resop, J.P., Mueller, N.D., Fleisher, D.H., Yun, K., Butler, E.E., Timlin, D.J., Shim, K.-M., Gerber, J.S., Reddy, V.R., Kim, S.-H., 2016. Random Forests for Global and Regional Crop Yield Predictions. PLoS One 11, e0156571. https://doi.org/10.1371/journal.pone.0156571
+JetBrains, 2024. Calling Java from Kotlin. Kotlin Programming Language.
 Jiya, E.A., Illiyasu, U., Akinyemi, M., 2023. Rice Yield Forecasting: A Comparative Analysis of Multiple Machine Learning Algorithms. Journal of Information Systems and Informatics 5, 785–799. https://doi.org/10.51519/journalisi.v5i2.506
 Karabiber, F., n.d. Gini Impurity [WWW Document]. URL https://www.learndatasci.com/glossary/gini-impurity/ (accessed 1.20.25).
 Khaki, S., Wang, L., 2019. Crop Yield Prediction Using Deep Neural Networks. Front. Plant Sci. 10. https://doi.org/10.3389/fpls.2019.00621
@@ -67,6 +72,7 @@ Philippine Statistics Authority, 2020. 2020 Year-End Report on Agriculture. Depa
 PhilRice, n.d. PhilRice LCC App Pro - Apps on Google Play [WWW Document]. PhilRice LCC App Pro. URL https://play.google.com/store/apps/details?id=ph.gov.philrice.lcc.pro&hl=en (accessed 1.20.25).
 Prasath, N., Sreemathy, J., Krishnaraj, N., Vigneshwaran, P., 2023. Analysis of Crop Yield Prediction Using Random Forest Regression Model, in: So-In, C., Londhe, N.D., Bhatt, N., Kitsing, M. (Eds.), Information Systems for Intelligent Systems, Smart Innovation, Systems and Technologies. Springer Nature Singapore, Singapore, pp. 239–249. https://doi.org/10.1007/978-981-19-7447-2_22
 Probst, P., Wright, M.N., Boulesteix, A.-L., 2019. Hyperparameters and tuning strategies for random forest. WIREs Data Mining and Knowledge Discovery 9, e1301. https://doi.org/10.1002/widm.1301
+Republic Act No. 10173 | GOVPH, 2012. . Official Gazette of the Republic of the Philippines. URL https://www.officialgazette.gov.ph/2012/08/15/republic-act-no-10173/ (accessed 11.13.25).
 RiceHub, n.d. The Rice Plant [WWW Document]. The Rice Plant. URL http://www.ricehub.org/RT/crop-establishment/-the-rice-plant/ (accessed 1.13.25).
 Sauro, J., 2016. Measuring Usability With The System Usability Scale (SUS) [WWW Document]. URL https://www.userfocus.co.uk/articles/measuring-usability-with-the-SUS.html (accessed 12.13.24).
 Softonic, n.d. Binhing Palay: Softonic Review [WWW Document]. Softonic. URL https://binhing-palay.en.softonic.com/android (accessed 12.13.24).
@@ -74,7 +80,7 @@ Step-by-step production - IRRI Rice Knowledge Bank [WWW Document], n.d. URL http
 Stuecker, M.F., Tigchelaar, M., Kantar, M.B., 2018. Climate variability impacts on rice production in the Philippines. PLOS ONE 13, e0201426. https://doi.org/10.1371/journal.pone.0201426
 Tallada, J.G., 2019. Precision Agriculture for Rice Production in the Philippines.
 The MathWorks Inc., n.d. What Is a Linear Regression Model? [WWW Document]. What Is a Linear Regression Model? URL https://www.mathworks.com/help/stats/what-is-linear-regression.html (accessed 1.18.25).
-Varoquaux, G., Raamana, P.R., Engemann, D.A., Hoyos-Idrobo, A., Schwartz, Y., Thirion, B., 2017. Assessing and tuning brain decoders: Cross-validation, caveats, and guidelines. NeuroImage, Individual Subject Prediction 145, 166–179. https://doi.org/10.1016/j.neuroimage.2016.10.038
 Vicente, O.D.J., Vicente, R.J., Vedra, S.A., 2023. A Paper Review on Rice Farming Practices towards Self-Sufficiency and Sustainability in the Philippines. IJSMS 6. https://doi.org/10.51386/25815946/ijsms-v6i3p103
 Yang, Z., Mugera, A.W., Zhang, F., 2016. Investigating Yield Variability and Inefficiency in Rice Production: A Case Study in Central China. Sustainability 8, 787. https://doi.org/10.3390/su8080787
+Zeigerman, I., Titov, N., Yershov, V., contributors, 2019. m2cgen: Transform ML models into a native code with zero dependencies.
 
