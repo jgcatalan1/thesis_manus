@@ -1,4 +1,5 @@
-Appendices
+APPENDICES
+
 Appendix 1. Informed Consent Form for Rice Farmers Participating in the GabayPalay Project.
 Principal Investigator: 	Joey Laurence G. Catalan
 Organization: 	University of the Philippines Mindanao
@@ -1572,6 +1573,51 @@ Appendix 10. (cont.).
         f.write(f"  {col}: {peou_item_means[col]:.2f}\n")
 
 print("Done. Results saved to uat_results.txt")
+ 
+Appendix 11. Detailed System Architecture and Control Flow Diagrams.
+This appendix presents the detailed architecture, data flow, and control flow diagrams that underpin the GabayPalay mobile application. These diagrams provide a more technical view of how the system is structured and how data and control move through the application. In the main text, only the system context (Fig. 22), high-level data flow (Fig. 23), and main navigation control flow (Fig. 24) are included to support the user-oriented description of the Mobile Application Development section. The figures in this appendix complement that description for readers who require implementation-level detail.
+System Architecture
+Appendix Figure 1 shows the three-layer modular architecture adopted for GabayPalay. The architecture separates user interface concerns from business logic and from data and model management. The User Interface Layer contains the Android Activities and layouts that handle user interaction. The Business Logic Layer contains the classes responsible for input validation, feature vector construction, nutrient calculations, prediction management, and state handling across screens. The Data and Model Layer contain the embedded m2cgen-generated Random Forest model and the Room/SQLite database used for local storage of prediction history and input records. This separation of concerns supports maintainability and aligns with the functional and non-functional requirements for offline operation, device compatibility, and data privacy.
+Detailed Data Flow Diagrams
+Fig. 23 in the main text presents the Level 1 data flow diagram summarizing the six major functional modules of GabayPalay. The following figure provides a more detailed view of the fertilizer management process.
+
+Appendix 11. (cont.).
+Appendix Figure 1. Three-layer modular architecture of the GabayPalay mobile application showing separation between User Interface Layer, Business Logic Layer, and Data and Model Layer with specific implementation classes, adapted from Gillis (2024).
+ 
+Appendix Figure 2 presents the Level 2 data flow diagram for the fertilizer management module. It expands Process 2.0 from the Level 1 DFD and shows how the application collects information on the number of fertilizer splits, the type of fertilizer products used at each split, and the corresponding quantities and units. The diagram also shows how these raw entries are transformed into standardized NPK values per application, which are then aggregated into the nutrient management features required by the prediction model. 
+Appendix 11. (cont.).
+Appendix Figure 2. Detailed data flow diagram (DFD Level 2) for the Fertilizer Management module, showing automatic NPK nutrient calculation based on fertilizer formulation selection.
+ 
+Prediction Workflow Control Flow Diagrams
+Fig. 24 in the main text summarizes the main navigation control flow between the prediction workflow and the historical workflow. The following figures show the detailed control flows for each stage of the prediction workflow.
+Appendix Figure 3 presents the control flow for the pre-planting input stage. It shows how the application transitions from the home screen to the optional onboarding guide for first-time users, then to the pre-planting input form. The diagram also shows the validation logic that checks for missing or invalid values and the navigation from pre-planting to the nutrient management stage once valid data have been entered. This control flow corresponds to the user interactions shown in Fig. 26 in the main text.
+Appendix Figure 4 presents the control flow for the nutrient management stage. It details how the user selects the number of fertilizer application splits, iteratively enters fertilizer products and quantities for each split, and views the automatically calculated NPK 
+Appendix 11. (cont.).
+values. The diagram also shows how the application enforces the maximum number of splits specified by the user and how it transitions to the pest management stage once all required entries have been completed. This control flow supports the nutrient management interface described in the Mobile Application Development section and illustrated in Fig. 27
+Appendix Figure 5 presents the control flow for the pest management stage. It shows how the application presents binary pest and disease checkboxes, conditionally displays input fields for protection products when pests are selected, applies validation rules, and navigates to the weather conditions stage. This diagram corresponds to the pest management functionality and interaction patterns illustrated in Fig. 28 in the main text.
+Appendix Figure 3. Control flow for the pre-planting input stage showing onboarding, data entry, validation, and navigation to the nutrient management stage (Connector 1→A).
+ 
+
+Appendix 11. (cont.).
+Appendix Figure 4. Control flow for the nutrient management stage showing fertilizer split selection, iterative application entry with automatic NPK calculation, and navigation to the pest management stage (Connector A→B).
+ 
+Appendix Figure 6 presents the control flow for the weather conditions stage. It shows how the application collects the binary weather challenge indicator, incorporates it into the current prediction session, and transitions to the prediction execution and results display stage. This diagram complements the weather input interface shown in Fig. 29 and connects it to the subsequent steps where the model is invoked.
+Appendix Figure 7 presents the control flow for model execution and results display. It details how the application constructs the 27-element feature vector from the stored inputs, invokes the embedded Java model to obtain a predicted yield, and then shows
+Appendix 11. (cont.).
+Appendix Figure 5. Control flow for the pest management stage showing pest selection, pesticide quantity entry, validation, and navigation to the weather conditions stage (Connector B→C).
+ 
+Appendix Figure 6. Control flow for the weather conditions stage showing binary weather challenge input and navigation to prediction execution (Connector C→P).
+ 
+Appendix 11. (cont.).
+Appendix Figure 7. Control flow for model execution and results display showing feature vector construction, prediction invocation, and navigation options (Connector P→M/2).
+ 
+the simple and detailed results views. The diagram also shows the branching options to save the prediction, view history, or return to the main screen. This control flow corresponds to the results and explanation interfaces illustrated in Fig. 30 in the main text.
+History Workflow Control Flow Diagram
+Appendix Figure 8 presents the control flow for the history management workflow. It shows how the application retrieves stored prediction records from the local SQLite database, displays them in reverse chronological order, and allows the user to filter by all records or favorites. 
+The diagram also shows how users can tap full prediction details, mark or unmark favorites, delete records, and navigate back to the main screen. This control supports the history interface described in the Mobile Application Development section and illustrated in Fig. 31.
+Appendix 11. (cont.).
+Appendix Figure 8. Control flow for the prediction history management workflow showing database retrieval, filtering options, and record actions (Connector 2→M).
+ 
 
 
  
