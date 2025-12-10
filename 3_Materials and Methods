@@ -1,9 +1,10 @@
-Materials and methods
+MATERIALS AND METHODS
+
 System Design and Architecture
 This study employed a comprehensive system design approach that integrated machine learning capabilities with mobile application development to deliver an accessible yield prediction tool for rice farmers. The system architecture was designed to function offline, ensuring usability in areas with limited internet connectivity while maintaining computational efficiency on mobile devices. The design framework encompassed data collection, model development, mobile application integration, and user interaction components that worked together to provide accurate yield predictions based on agronomic inputs.
 As shown in Fig. 16, the conceptual framework demonstrates the interconnected relationship between farmers as end-users, data collection processes, machine learning algorithms, and mobile application interfaces. This framework serves as the foundation for understanding how agronomic data flows through the system to generate actionable yield predictions that support farmer decision-making in rice production.
  
-Fig. 16. Conceptual framework of the study
+Fig. 16. Conceptual framework of the study.
 The system architecture followed a three-tier design pattern, consisting of the presentation layer (mobile user interface), business logic layer (data processing and Random Forest model), and data persistence layer (local storage for farmer inputs and prediction results). This modular approach ensured scalability, maintainability, and efficient resource utilization on mobile devices while providing seamless user experience for farmers with varying levels of technological expertise.
 The technology stack integrated Python-based machine learning development with Kotlin-based Android application development, utilizing the m2cgen library for model conversion and ensuring compatibility across the development and deployment phases.  
 Development Methodology Framework
@@ -65,9 +66,9 @@ The pipeline architecture emphasized modularity and reproducibility, with each c
 Random forest implementation and optimization
 The Random Forest regression model was implemented using Python’s scikit-learn library (Pedregosa et al., 2011), following the ensemble learning approach described by Breiman (2001). The model utilized bootstrap aggregating (bagging) and feature randomization techniques to improve prediction accuracy and reduce overfitting compared to individual decision trees.
 Model formulation. The Random Forest algorithm operates through a four-stage process: bootstrap sampling, recursive tree construction with feature randomization, individual tree prediction, and ensemble aggregation. Following Breiman (2001), for each tree t in the ensemble (t=1,2,…,T), a bootstrap sample D_t is drawn with replacement from the training dataset D_train of size N (equation [10]): 
-D_t={(X_i,y_i ):i=S_t}	[10]
+D_t=(X_i,y_i ):i=S_t	[10]
 
-where S_t is a random sample of indices drawn with replacement from {1,2,…,N}, such that |S_t |=N. This bootstrap sampling procedure, a form of bagging (Breiman, 2001), ensures that each tree is trained on different subset of the data, introducing diversity across the ensemble. Approximately 63.2% of unique observations appear in each bootstrap sample, with the remaining ~36.8% forming out-of-bag samples for unbiased error estimation.
+where S_t is a random sample of indices drawn with replacement from 1,2,…,N, such that |S_t |=N. This bootstrap sampling procedure, a form of bagging (Breiman, 2001), ensures that each tree is trained on different subset of the data, introducing diversity across the ensemble. Approximately 63.2% of unique observations appear in each bootstrap sample, with the remaining ~36.8% forming out-of-bag samples for unbiased error estimation.
 As described by (James et al., 2023b), each tree h_t is is constructed through recursive binary splitting. At each internal node, a random subset of m features is selected from the total p features:
 F_"node" ⊂{X_1,X_2,…,X_27 }         "where        " |F_"node"  |=m	[11]
 
@@ -78,7 +79,7 @@ where MSE is defined as:
 "MSE"=1/n_"node"   ∑_(i∈"node" )▒(y_i-y ̅_"node"  )^2 	[13]
 
 With n_"node"  denoting the number of samples in the node and y ̅_"node"  representing their mean yield. This splitting process continues recursively until stopping criteria are met (max_depth, min_samples_split, min_samples_leaf).
-For a new input vector X=(X_1,X_2,…X_n) representing farm characteristics, each tree produces a prediction by traversing to a terminal leaf and returning the mean yield of training samples in that leaf:
+For a new input vector X=(X_1,X_2,…X_n ) representing farm characteristics, each tree produces a prediction by traversing to a terminal leaf and returning the mean yield of training samples in that leaf:
 h_t (X)=y ̅_"leaf"  (X)	[14]
 
 The final Random Forest prediction aggregates individual tree predictions through arithmetic averaging (Breiman, 2001; Hastie et al., 2009; James et al., 2023b) (Equation [15]):
@@ -89,18 +90,17 @@ The model was implemented using scikit-learn’s RandomForestRegressor with defa
 Hyperparameter optimization. The hyperparameter search space was defined based on established Random Forest tuning guidelines (Breiman, 2001; James et al., 2023b) and and computational constraints for mobile deployment. 
 The n_estimators parameter (T in Equation [15]) was tested across [100, 200, 300, 400] trees. James et al. (2023b) observed that Random Forest performance typically stabilizes after 100-200 trees, with diminishing returns beyond this range. The max_depth parameter was tested as [None, 10, 20] to balance model expressiveness with overfitting risk, particularly important given the limited training data relative to feature dimensionality. The min_samples_split [2, 4, 6] and min_samples_leaf [1, 2, 3] parameters control tree complexity and prediction smoothness, with higher values serving as regularization mechanisms to prevent overfitting (Hastie et al., 2009).
 The max features parameter implements the feature randomization described in Equation [11], the key innovation distinguishing Random Forests from simple bagging (Breiman, 2001). Breiman (2001) recommended m = √p features per split for regression, implemented through max_features = ‘sqrt’. The alternative ‘log2’ option produces similar behavior. Both were tested to decorrelate trees and improve ensemble performance compared to the default behavior of using all features at each split.
-The complete hyperparameter search space, summarized in Table 5, encompassed 216 combinations (4 ×3×3×3×2) Grid search with 3-fold cross-validation systematically evaluated all combinations to identify the optimal configuration that maximized mean R² while maintaining computational feasibility (Bergstra and Bengio, 2012).
-Table 5. Hyperparameter search space for Random Forest grid search optimization.
-Hyperparameter	Values Tested
-n_estimators	[100, 200, 300, 400]
-max_depth	[None, 10, 20]
-min_samples_split	[2, 4, 6]
-min_samples_leaf	[1, 2, 3]
-max_features	['sqrt', 'log2']
-Total combinations	216
-(butangan unta ni og another column for literature support)
+The complete hyperparameter search space, summarized in Table 5, encompassed 216 combinations (4 ×3×3×3×2) Grid search with 3-fold cross-validation systematically evaluated all combinations to identify the optimal configuration that maximized mean R^2 while maintaining computational feasibility (Bergstra and Bengio, 2012).
 Model training and validation workflow
-The model training and validation workflow, shown in Fig. 20, established a systematic process for developing, testing, and validating the Random Forest regression model while maintaining generalization performance and preventing overfitting.
+The model training and validation workflow, shown in Fig. 19, established a systematic process for developing, testing, and validating the Random Forest regression model while maintaining generalization performance and preventing overfitting.
+Table 5. Hyperparameter search space for Random Forest grid search optimization.
+Hyperparameter	Values Tested	Literature Support
+n_estimators	[100, 200, 300, 400]	Probst et al. (2019); Jeong et al. (2016)
+max_depth	[None, 10, 20]	Probst et al. (2019); Khaki and Wang (2019); Jeong et al. (2016)
+min_samples_split	[2, 4, 6]	Probst et al. (2019); Khaki and Wang (2019)
+min_samples_leaf	[1, 2, 3]	Probst et al. (2019)
+max_features	['sqrt', 'log2']	Probst et al. (2019)
+Total combinations	216	
  
 Fig. 19. Model training and validation workflow. The trained model was exported into standalone Kotlin code compatible with Android applications.
 The training phase employed grid search with three-fold cross-validation (k=3) to systematically evaluate all hyperparameter combinations. Three-fold cross-validation was selected to balance the need for robust performance estimation with the constraints of limited dataset size typical of localized agricultural studies. For small agricultural datasets (n<100) with a 70/30 train-test split, 3-fold cross-validation provides a reasonable balance between training set size and validation set size for performance estimation, as recommended by Kuhn and Johnson (2013).
@@ -117,8 +117,8 @@ The coefficient of determination (R²) evaluated the proportion of variance in a
 R^2=1-(∑_(i=1)^n▒〖(y_i-y ̂_i )^2  〗)/(∑_(i=1)^n▒〖(y_i-y ̅ )^2  〗)	[19]
 
 where n represents the number of samples, y_i denotes actual yield,  y ̂_i represents predicted yield, and  y ̅ indicates the mean actual yield (Kuhn and Johnson, 2013).
-Following hyperparameter selection, the final Random Forest model was trained on the complete training set using the optimal configuration identified through grid search. This best model was then evaluated on the held-out test set to assess generalization performance on unseen data. Test set metrics provided an unbiased estimate of model performance for real-world deployment scenarios.
-Model persistence and deployment preparation completed the workflow. The trained model was exported using the m2cgen library to convert the scikit-learn Random Forest implementation into standalone Kotlin code compatible with Android applications. This conversion enabled offline yield prediction functionality within the GabayPalay mobile application without requiring external dependencies or internet connectivity. The generated Kotlin code, along with feature importance utilities and prediction interfaces, was integrated into the mobile application architecture detailed in Phase 3. The complete model training and export code is provided in Appendix 5. 
+Following hyperparameter selection, the final Random Forest model was trained on the complete training set using the optimal configuration identified through grid search. This best model was then evaluated on the held-out test set to assess generalization performance on unseen data.
+The trained model was exported using the m2cgen library (Zeigerman et al., 2019) to convert the scikit-learn Random Forest implementation into standalone Java source code. Java was selected as the export format (from m2cgen's supported languages: Python, Java, C, Go, JavaScript) due to its native interoperability with Kotlin (JetBrains, 2024), optimized code generation for mobile performance, and broad Android platform compatibility (Google LLC, 2024). This approach eliminates dependencies on external machine learning libraries that would compromise offline operation and increase application size. The generated Java model code would be integrated with Kotlin-based application logic into a modular mobile architecture. The complete model training and export code is provided in Appendix 5. 
 Phase 3: User Design and System Architecture
 The user design and system architecture phase focused on translating functional requirements and model specifications into a comprehensive mobile application design. This phase established the design methodology, architectural principles, and user interface development approach that guided the subsequent construction and implementation phase. 
 Design methodology framework
@@ -181,9 +181,9 @@ Testing began with controlled sessions where individual farmers interacted with 
 Task-based scenarios were designed to reflect typical farming decision-making situations, guiding users through complete workflow cycles from data input to prediction interpretation and decision-making support. The framework addressed diverse user backgrounds and technological experience, accommodating farmers with varying digital literacy while maintaining consistent evaluation standards.
 Feedback was collected using both quantitative instruments and qualitative interviews to capture comprehensive user perspectives on utility, usability, and adoption potential. The framework enabled systematic analysis of user acceptance factors and identified opportunities for improvement.
 System Usability Scale assessment
-The System Usability Scale (SUS), based on Brooke (1996), was used to quantitatively measure the usability of the GabayPalay application. The assessment was conducted using the ten-item questionnaire (see Appendix 7), rated on a 5-point Likert scale, following standard scoring procedures to produce final scores from 0 to 100. Participants included rice farmers and individuals with relevant technological experience.
+The System Usability Scale (SUS), based on Brooke (1996), was used to quantitatively measure the usability of the GabayPalay application. The assessment was conducted using the ten-item questionnaire (see Appendix 6), rated on a 5-point Likert scale, following standard scoring procedures to produce final scores from 0 to 100. Participants included rice farmers and individuals with relevant technological experience.
 SUS scores were interpreted using established benchmarks (Sauro, 2016): scores above 70 indicated acceptable usability, above 80 signified good usability, and above 90 reflected excellent usability. These thresholds provided clear standards for evaluating the application's user experience. The analysis included calculation of mean scores, standard deviations, and confidence intervals to characterize overall performance. Additionally, item-level assessment was conducted to identify specific areas for improvement and guide targeted refinements in the application's design.
 Technology Acceptance Model evaluation
-The Technology Acceptance Model (TAM), from Davis (1989), assessed user acceptance in terms of perceived usefulness, ease of use, and behavioral intention. The evaluation used a structured questionnaire (see Appendix 8) to capture user perceptions of the application's practical benefits, interface clarity, and willingness to adopt.
+The Technology Acceptance Model (TAM), from Davis (1989), assessed user acceptance in terms of perceived usefulness, ease of use, and behavioral intention. The evaluation used a structured questionnaire (see Appendix 7) to capture user perceptions of the application's practical benefits, interface clarity, and willingness to adopt.
 Descriptive statistics summarized TAM responses, with correlation analysis exploring links between usefulness, ease of use, and adoption intention. Qualitative feedback provided additional context for user acceptance and highlighted features impacting evaluations. Comparative analysis identified patterns across user backgrounds and informed recommendations for support and training.
 Combined SUS and TAM results offered a comprehensive picture of the GabayPalay application's usability and acceptance among rice farmers, guiding final refinements and deployment strategies to enhance adoption and long-term success.
